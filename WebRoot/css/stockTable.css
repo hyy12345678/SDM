@@ -1,0 +1,19 @@
+#stockTable{
+    border: 1px solid #000000;
+    border-collapse: collapse;
+    width: 95%;
+    margin: 5px auto;
+}
+
+#stockTable th,td{
+    border: 1px solid #000000;
+    text-align: center;
+}
+
+#stockTable th{
+    background-color: #F0F0F0;
+}
+
+#stockTable td{
+	font-size: 14;
+}

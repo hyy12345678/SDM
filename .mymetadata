@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-module
+  type="WEB"
+  name="StockDataManagement"
+  id="myeclipse.1429262041436"
+  context-root="/StockDataManagement"
+  j2ee-spec="5.0"
+  archive="StockDataManagement.war">
+  <attributes>
+    <attribute name="webrootdir" value="WebRoot" />
+  </attributes>
+</project-module>
+

@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="com.lijing.stockData.system.model.StockData" table="t_stock"
+		catalog="stdm">
+		<id name="stockId" type="java.lang.Integer">
+			<column name="id" />
+			<generator class="identity" />
+		</id>
+		<property name="currency" type="java.lang.String">
+			<column name="currency" length="32">
+				<comment>交易币种</comment>
+			</column>
+		</property>
+		<property name="stockName" type="java.lang.String">
+			<column name="stock_name" length="32">
+				<comment>证券名称</comment>
+			</column>
+		</property>
+		<property name="tradingTime" type="java.util.Date">
+			<column name="trading_time" length="10" unique-key="UK_STOCk">
+				<comment>成交日期</comment>
+			</column>
+		</property>
+		<property name="tradingDcode" type="java.lang.String" unique-key="UK_STOCk">
+			<column name="trading_dcode">
+				<comment>系统数据中的日期尾数</comment>
+			</column>
+		</property>
+		<property name="strikePrice" type="java.lang.Float">
+			<column name="strike_price" precision="12" scale="0">
+				<comment>成交价格</comment>
+			</column>
+		</property>
+		<property name="strikeNum" type="java.lang.Float">
+			<column name="strike_Num" precision="12" scale="0">
+				<comment>成交数量</comment>
+			</column>
+		</property>
+		<property name="totalAmount" type="java.lang.Float">
+			<column name="total_Amount" precision="12" scale="0">
+				<comment>发生金额</comment>
+			</column>
+		</property>
+		<property name="balance" type="java.lang.Float">
+			<column name="balance" precision="12" scale="0">
+				<comment>资金余额</comment>
+			</column>
+		</property>
+		<property name="contract" type="java.lang.String">
+			<column name="contract">
+				<comment>合同编号</comment>
+			</column>
+		</property>
+		<property name="bussinessName" type="java.lang.String">
+			<column name="bussiness_name" length="32">
+				<comment>业务名称</comment>
+			</column>
+		</property>
+		<property name="fees" type="java.lang.Float">
+			<column name="fees" precision="12" scale="0">
+				<comment>手续费</comment>
+			</column>
+		</property>
+		<property name="stampTax" type="java.lang.Float">
+			<column name="stamp_tax" precision="12" scale="0">
+				<comment>印花税</comment>
+			</column>
+		</property>
+		<property name="transferFee" type="java.lang.Float">
+			<column name="transfer_fee" precision="12" scale="0">
+				<comment>过户费</comment>
+			</column>
+		</property>
+		<property name="clearingFees" type="java.lang.Float">
+			<column name="clearing_fees" precision="12" scale="0">
+				<comment>结算费</comment>
+			</column>
+		</property>
+		<property name="stockCode" type="java.lang.String">
+			<column name="stock_code" length="32">
+				<comment>证券代码</comment>
+			</column>
+		</property>
+		<property name="flag" type="java.lang.Integer">
+			<column name="flag">
+				<comment>银证标示，银行0，证券1</comment>
+			</column>
+		</property>
+		<property name="shareholderCode" type="java.lang.String">
+			<column name="shareholder_code" length="32">
+				<comment>股东代码</comment>
+			</column>
+		</property>
+	</class>
+
+</hibernate-mapping>

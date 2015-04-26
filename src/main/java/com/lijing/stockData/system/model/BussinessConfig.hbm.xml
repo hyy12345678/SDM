@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="com.lijing.stockData.system.model.BussinessConfig" table="t_bussiness_config"
+		catalog="stdm">
+		
+		<id name="id" type="java.lang.Integer">
+			<column name="id" />
+		</id>
+		
+		<property name="bussinessName" type="java.lang.String">
+			<column name="bussiness_Name" length="32">
+				<comment>业务名称</comment>
+			</column>
+		</property>
+		
+		<property name="bussinessCode" type="java.lang.String">
+			<column name="bussiness_Code" length="32">
+				<comment>业务名称编号</comment>
+			</column>
+		</property>
+		
+	</class>
+</hibernate-mapping>
