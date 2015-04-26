@@ -1,1 +1,3 @@
 /WebRoot/WEB-INF/lib
+/WebRoot/WEB-INF/classes
+/target/test-classes
