@@ -23,8 +23,9 @@ create table `t_stock`(
 `stock_code` varchar(32) comment '证券代码',
 `shareholder_code` varchar(32) comment '股东代码',
 `flag` int(1) comment '银证标示，银行0，证券1',
-PRIMARY KEY  (`id`),
+PRIMARY KEY  (`id`)s
 );
+#ALTER TABLE `t_stock` ADD unique UK_STOCK (`trading_time`,`trading_dcode`);
 
 drop table t_bussiness_config;
 #业务名称表
@@ -33,9 +34,8 @@ create table `t_bussiness_config`(
 `bussiness_Name` varchar(32) comment '业务名称',
 `bussiness_Code` varchar(32) comment '业务名称编号',
 `isBank` int(1) comment '银证标示，银行0，证券1',
-PRIMARY KEY(`id`),
-UNIQUE KEY `UK_STOCk` (`trading_time`,`trading_dcode`,`bussiness_name`)
-)DEFAULT CHARSET=utf8;
+PRIMARY KEY(`id`)
+);
 
 #以股票账号中的资金为基点，流入为0，流出为1，包括交易，购买为流出1，卖出为流入0
 insert into t_bussiness_config values (1,'银行转存','0010',0);

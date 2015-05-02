@@ -51,6 +51,9 @@
 		<!-- one of the properties available; the maximum file size in bytes -->
 		<property name="maxUploadSize" value="100000" />
 	</bean>
+	
+	<bean id="staticBussinessConfig" class="com.lijing.stockData.system.common.StaticBussinessConfig"
+	init-method="setStaicConfigParam" lazy-init="true"> </bean>
 
 </beans>
   

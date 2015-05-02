@@ -36,6 +36,10 @@
 				<br/><br />
 				<input type="submit" value="提交" />
 				<br/><br />
+				<c:if test="${message!= null}">
+					<%=request.getAttribute("message")%><br/>
+					<a href="#">返回首页</a>
+				</c:if>
 			</form>
 		</div>
 

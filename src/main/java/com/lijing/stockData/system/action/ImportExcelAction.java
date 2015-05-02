@@ -28,8 +28,12 @@ public class ImportExcelAction {
 	public ModelAndView handleImportExcel(@RequestParam("excelFile")MultipartFile excelFile)
 	{
 		ModelAndView view = new ModelAndView();
-		view.setViewName("forward:uploadFile");
-		
+		view.setViewName("forward:uploadFilePage.html");
+		if(excelFile.isEmpty())
+		{
+			view.addObject("message", "未选择文件！");
+			return view;
+		}
 		String result = "";
 		//设置返回界面
 		

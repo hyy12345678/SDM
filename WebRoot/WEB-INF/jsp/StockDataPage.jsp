@@ -21,20 +21,23 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 
     <link href="css/stockPage.css" type="text/css" rel="stylesheet"/>
     <link href="css/stockTable.css" type="text/css" rel="stylesheet"/>
+    <link href="https://ss0.bdstatic.com/5a21bjqh_Q23odCf/static/message/css/message_33dce38c.css"  type="text/css" rel="stylesheet"/>
 
     <script type="text/javascript" src="js/jquery-1.11.2.js"></script>
     <script type="text/javascript" src="js/stockDataPage.js"></script>
   </head>
   
-  <body>
-<br/>
+ <body>
+ <script type="text/javascript">
+	sumPageNum=<%=request.getAttribute("sumPageNum")%>;
+ </script>
 
-<h2>股票交易数据</h2>
+<h3>股票交易数据</h3>
 
 <div id="main">
 
     <div id="acount">
-        <label id="acountCode"></label>
+        <label id="acountCode">股票帐号：<%=request.getAttribute("Account")%></label>
     </div>
 
     <div id="mainContent">
@@ -54,12 +57,10 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 
             <div id="tab1" class="title">
                 <h3>股票交易数据</h3>
-
             </div>
 
             <div id="tab2" class="title">
                 <h3>银证转帐数据</h3>
-
             </div>
 
             <div id="tab3" class="title">
@@ -69,30 +70,31 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
             <div id="tab4" class="title">
                 <h3>指标统计</h3>
             </div>
+			<div style="overflow:auto;height:220">
+				<table id="stockTable"></table>
+			</div>
 
-            <table id="stockTable">
-
-                <tr id="thtab1" class="tableHead">
-                    <th>stock1</th>
-                    <th>stock1</th>
-                    <th>stock1</th>
-                </tr>
-                <tr id="thtab2" class="tableHead">
-                    <th>bank1</th>
-                    <th>bank1</th>
-                    <th>bank1</th>
-                </tr>
-                <tr>
-                    <td>数据1</td>
-                    <td>数据2</td>
-                    <td>数据3</td>
-                </tr>
-            </table>
-
-            <span id="page-bar">
-                <a href="" onclick="testjs()">上一页</a>
-                <a href="">下一页</a>
-            </span>
+            <div id="page-bar">
+                <a id="prePage"  class="normal">
+                	<span>上一页</span>
+                </a>
+                <a id="nextPage"   class="normal">
+                	<span>下一页</span>
+                </a>
+                <span>
+               		 每页
+                <select id="pageSize">
+                	<option>10</option>
+                	<option>20</option>
+                	<option>30</option>
+                </select>
+                	项
+                </span>
+                <span>
+                	第<label id="currentPage"></label>页/共<label id="sumPageNum"></label>页
+                </span>
+                	
+            </div>
         </div>
 
     </div>

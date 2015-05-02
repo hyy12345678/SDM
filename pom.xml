@@ -182,7 +182,6 @@
 			<groupId>net.sf.json-lib</groupId>
 			<artifactId>json-lib</artifactId>
 			<version>2.4</version>
-			<classifier>jdk15</classifier>
 		</dependency>
 
 		<!-- 其他依赖的包 -->
@@ -209,6 +208,8 @@
 			<artifactId>jxl</artifactId>
 			<version>2.6.10</version>
 		</dependency>
+		
+		
 
 		<!-- Junit -->
 		<dependency>

@@ -5,6 +5,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import junit.framework.Assert;
+
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,7 +25,7 @@ public class TestStrockDataDAO {
 	@Test
 	public void testFindCount()
 	{
-		long count = stockDataDAO.findCount("select count(*) from StockData");
+		long count = stockDataDAO.findCountBySql("select count(*) from StockData");
 		System.out.println(count);
 	}
 	
@@ -66,6 +68,15 @@ public class TestStrockDataDAO {
 	}
 	
 	@Test
+	public void testGetTradingData()
+	{
+		List<StockData> stockDataList = stockDataDAO.getTradingDataByFlag(0, 10, 0);
+		System.out.println(stockDataList.size());
+		Assert.assertEquals(7,stockDataList.size());
+
+	}
+	
+	@Test
 	public void testListToString()
 	{
 		/*测试代码*/
@@ -88,8 +99,13 @@ public class TestStrockDataDAO {
 			listStock.add(stock);
 		}
 		System.out.println(listStock.toString());
-		
 	}
-
+	
+	@Test
+	public void testGetSumNumOfDataByFlag()
+	{
+		long count = stockDataDAO.getSumNumOfDataByFlag(0);
+		Assert.assertEquals(15, count);
+	}
 	
 }

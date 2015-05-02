@@ -1,7 +1,9 @@
 package com.lijing.stockData.system.dao;
 
+import org.hibernate.Session;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.orm.hibernate3.HibernateTemplate;
+import org.springframework.orm.hibernate3.SessionFactoryUtils;
 
 public class BaseDao {
 	@Autowired
@@ -13,5 +15,10 @@ public class BaseDao {
 
 	public HibernateTemplate getHibernateTemplate() {
 		return hibernateTemplate;
+	}
+	
+	public Session getSession()
+	{
+		return SessionFactoryUtils.getSession(hibernateTemplate.getSessionFactory(), true);
 	}
 }

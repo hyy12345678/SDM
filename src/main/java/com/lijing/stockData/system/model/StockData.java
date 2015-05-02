@@ -1,6 +1,8 @@
 package com.lijing.stockData.system.model;
 
+import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.logging.SimpleFormatter;
 
 //@Entity
 public class StockData {
@@ -52,6 +54,11 @@ public class StockData {
 	}
 	public void setStockName(String stockName) {
 		this.stockName = stockName;
+	}
+	public String getTradingTimeStr()
+	{
+		SimpleDateFormat sf = new SimpleDateFormat("yyyy-MM-dd");
+		return sf.format(this.tradingTime);
 	}
 	public Date getTradingTime() {
 		return tradingTime;
